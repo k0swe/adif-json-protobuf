@@ -115,83 +115,85 @@ message Station {
   double power = 6;
   // description of the station's equipment
   string rig = 7;
-  // the operator's age in years in the range 0 to 120 (inclusive)
-  uint32 age = 8;
   // description of the station antenna
-  string antenna = 9;
+  string antenna = 8;
   // antenna beam azimuth in degrees
-  int32 antenna_azimuth = 10;
+  int32 antenna_azimuth = 9;
   // antenna beam elevation in degrees
-  int32 antenna_elevation = 11;
-  // owner's callsign (if different from the operator)
-  string owner_call = 12;
+  int32 antenna_elevation = 10;
+  // station owner's callsign
+  string owner_call = 11;
+  // callsign used over the air, e.g. a club callsign
+  string station_call = 12;
+  // the operator's age in years in the range 0 to 120 (inclusive)
+  uint32 age = 13;
   // indicates that the operator is now a Silent Key
-  bool silent_key = 13;
+  bool silent_key = 14;
   // preferred QSL route
-  string qsl_via = 14;
+  string qsl_via = 15;
 
   // complete mailing address: full name, street address, city, postal code, and country
-  string address = 15;
+  string address = 16;
   // street
-  string street = 16;
+  string street = 17;
   // city
-  string city = 17;
+  string city = 18;
   // postal code
-  string postal_code = 18;
+  string postal_code = 19;
   // Secondary Administrative Subdivision (e.g. US county, JA Gun)
-  string county = 19;
+  string county = 20;
   // the code for the Primary Administrative Subdivision (e.g. US State, JA Island, VE Province)
-  string state = 20;
+  string state = 21;
   // DXCC entity name
-  string country = 21;
+  string country = 22;
   // DXCC Entity Code
-  uint32 dxcc = 22;
+  uint32 dxcc = 23;
   // continent
-  string continent = 23;
+  string continent = 24;
 
   // email address
-  string email = 24;
+  string email = 25;
   // the station's website URL
-  string web = 25;
+  string web = 26;
 
   // CQ Zone in the range 1 to 40 (inclusive)
-  uint32 cq_zone = 26;
+  uint32 cq_zone = 27;
   // ITU zone in the range 1 to 90 (inclusive)
-  uint32 itu_zone = 27;
+  uint32 itu_zone = 28;
   // DARC DOK (District Location Code)
-  string darc_dok = 28;
+  string darc_dok = 29;
   // FISTS CW Club member number
-  uint32 fists = 29;
+  uint32 fists = 30;
   // FISTS CW Club Century Certificate (CC) number
-  uint32 fists_cc = 30;
+  uint32 fists_cc = 31;
   // IOTA designator, in format CC-XXX
-  string iota = 31;
+  string iota = 32;
   // IOTA Island Identifier
-  uint32 iota_island_id = 32;
+  uint32 iota_island_id = 33;
   // WPX prefix
-  string pfx = 33;
+  string pfx = 34;
   // WAE or CQ entity contained within a DXCC entity
-  string region = 34;
+  string region = 35;
   // Straight Key Century Club (SKCC) member information
-  string skcc = 35;
+  string skcc = 36;
   // special interest activity or event
-  string sig = 36;
+  string sig = 37;
   // special interest activity or event information
-  string sig_info = 37;
+  string sig_info = 38;
   // International SOTA Reference
-  string sota_ref = 38;
+  string sota_ref = 39;
   // Ten-Ten number
-  uint32 ten_ten = 39;
+  uint32 ten_ten = 40;
   // two US counties in the case where the logging station is located on a border between two
   // counties, representing counties that the contacted station may claim for the CQ Magazine USA-CA
   // award program
-  string usaca_counties = 40;
+  string usaca_counties = 41;
   // UKSMG member number
-  uint32 uksmg = 41;
+  uint32 uksmg = 42;
   // two or four adjacent Maidenhead grid locators, each four characters long, representing the
   // logging station's grid squares that the contacted station may claim for the ARRL VUCC award
   // program
-  string vucc_grids = 42;
+  string vucc_grids = 43;
 }
 
 // QSO fields describing radio propagation conditions

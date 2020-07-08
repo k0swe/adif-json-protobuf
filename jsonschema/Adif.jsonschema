@@ -358,10 +358,6 @@
                     "type": "string",
                     "description": "description of the station's equipment"
                 },
-                "age": {
-                    "type": "integer",
-                    "description": "the operator's age in years in the range 0 to 120 (inclusive)"
-                },
                 "antenna": {
                     "type": "string",
                     "description": "description of the station antenna"
@@ -376,7 +372,15 @@
                 },
                 "owner_call": {
                     "type": "string",
-                    "description": "owner's callsign (if different from the operator)"
+                    "description": "station owner's callsign"
+                },
+                "station_call": {
+                    "type": "string",
+                    "description": "callsign used over the air, e.g. a club callsign"
+                },
+                "age": {
+                    "type": "integer",
+                    "description": "the operator's age in years in the range 0 to 120 (inclusive)"
                 },
                 "silent_key": {
                     "type": "boolean",
