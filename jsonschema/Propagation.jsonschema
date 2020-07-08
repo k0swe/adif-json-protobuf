@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "propagation_mode": {
+            "type": "string",
+            "description": "QSO propagation mode"
+        },
+        "a_index": {
+            "type": "integer",
+            "description": "the geomagnetic A index at the time of the QSO in the range 0 to 400 (inclusive)"
+        },
+        "k_index": {
+            "type": "integer",
+            "description": "the geomagnetic K index at the time of the QSO in the range 0 to 9 (inclusive)"
+        },
+        "solar_flux_index": {
+            "type": "integer",
+            "description": "the solar flux at the time of the QSO in the range 0 to 300 (inclusive)."
+        },
+        "ant_path": {
+            "type": "string",
+            "description": "the signal path"
+        },
+        "force_init": {
+            "type": "boolean",
+            "description": "new EME \"initial\""
+        },
+        "max_bursts": {
+            "type": "integer",
+            "description": "maximum length of meteor scatter bursts heard by the logging station, in seconds"
+        },
+        "meteor_shower_name": {
+            "type": "string",
+            "description": "For Meteor Scatter QSOs, the name of the meteor shower in progress"
+        },
+        "nr_bursts": {
+            "type": "integer",
+            "description": "the number of meteor scatter bursts heard by the logging stationthe number of meteor scatter\n bursts heard by the logging station"
+        },
+        "nr_pings": {
+            "type": "integer",
+            "description": "the number of meteor scatter pings heard by the logging station"
+        },
+        "sat_mode": {
+            "type": "string",
+            "description": "satellite mode"
+        },
+        "sat_name": {
+            "type": "string",
+            "description": "name of satellite"
+        }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "description": "QSO fields describing radio propagation conditions"
+}

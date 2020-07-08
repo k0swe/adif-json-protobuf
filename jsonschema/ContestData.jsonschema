@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "contest_id": {
+            "type": "string",
+            "description": "Contest Identifier"
+        },
+        "serial_sent": {
+            "type": "string",
+            "description": "contest QSO transmitted serial number"
+        },
+        "serial_received": {
+            "type": "string",
+            "description": "contest QSO received serial number"
+        },
+        "arrl_section": {
+            "type": "string",
+            "description": "ARRL section"
+        },
+        "class": {
+            "type": "string",
+            "description": "contest class (e.g. for ARRL Field Day)"
+        },
+        "check": {
+            "type": "string",
+            "description": "contest check (e.g. for ARRL Sweepstakes)"
+        },
+        "precedence": {
+            "type": "string",
+            "description": "contest precedence (e.g. for ARRL Sweepstakes)"
+        }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "description": "QSO fields that are relevant to contests only"
+}

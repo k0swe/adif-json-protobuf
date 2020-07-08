@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "credit": {
+            "type": "string"
+        },
+        "qsl_medium": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": true,
+    "type": "object",
+    "description": "data about using this QSO for award credit"
+}
