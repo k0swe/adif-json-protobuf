@@ -7,8 +7,8 @@
         },
         "created_timestamp": {
             "type": "string",
-            "format": "date-time",
-            "description": "identifies the UTC date and time that the file was created"
+            "description": "identifies the UTC date and time that the file was created",
+            "format": "date-time"
         },
         "program_id": {
             "type": "string",

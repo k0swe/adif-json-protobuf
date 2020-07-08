@@ -3,8 +3,8 @@
     "properties": {
         "sent_date": {
             "type": "string",
-            "format": "date-time",
-            "description": "date QSL sent"
+            "description": "date QSL sent",
+            "format": "date-time"
         },
         "sent_status": {
             "type": "string",
@@ -16,8 +16,8 @@
         },
         "received_date": {
             "type": "string",
-            "format": "date-time",
-            "description": "date QSL received"
+            "description": "date QSL received",
+            "format": "date-time"
         },
         "received_status": {
             "type": "string",

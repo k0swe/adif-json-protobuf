@@ -95,13 +95,13 @@
         },
         "time_on": {
             "type": "string",
-            "format": "date-time",
-            "description": "date and time the QSO started"
+            "description": "date and time the QSO started",
+            "format": "date-time"
         },
         "time_off": {
             "type": "string",
-            "format": "date-time",
-            "description": "date and time the QSO ended"
+            "description": "date and time the QSO ended",
+            "format": "date-time"
         },
         "random": {
             "type": "boolean",
@@ -260,8 +260,8 @@
             "properties": {
                 "sent_date": {
                     "type": "string",
-                    "format": "date-time",
-                    "description": "date QSL sent"
+                    "description": "date QSL sent",
+                    "format": "date-time"
                 },
                 "sent_status": {
                     "type": "string",
@@ -273,8 +273,8 @@
                 },
                 "received_date": {
                     "type": "string",
-                    "format": "date-time",
-                    "description": "date QSL received"
+                    "description": "date QSL received",
+                    "format": "date-time"
                 },
                 "received_status": {
                     "type": "string",
