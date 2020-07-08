@@ -84,10 +84,9 @@ critical to an interchange format. This is a proposal meant to stimulate a discu
 it internally in my own logging application. 
 
 I don't really expect that protocol buffers will become a popular way for end users to store their
-data on disk or even for developers of different software to support importing or exporting
-protobufs.
+data on disk or even for developers of software to support importing or exporting binary protobufs.
 
-Perhaps desktop logging software might use JSON as a disk file format; JSON is both highly 
+Perhaps desktop logging software might start using JSON as a disk file format; JSON is both highly 
 human-readable and highly machine-parsable. However, I think that's questionable for the same reason
 that ADX failed; ADIF is good enough and already ubiquitous.
 
