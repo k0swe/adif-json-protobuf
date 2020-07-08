@@ -80,8 +80,8 @@ accommodate e.g. new political boundaries and new operating modes.
 ## Should I use it?
 
 This is an unofficial extension of ADIF and does not yet have any community support, which is
-critical to an interchange format. This is a proposal meant to stimulate a discussion, and I'll
-personally use it internally in my own logging application. 
+critical to an interchange format. This is a proposal meant to stimulate a discussion, and I'll use
+it internally in my own logging application. 
 
 I don't really expect that protocol buffers will become a popular way for end users to store their
 data on disk or even for developers of different software to support importing or exporting
