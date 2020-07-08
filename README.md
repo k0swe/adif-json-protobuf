@@ -73,6 +73,10 @@ with those serial numbers, and this is simpler for everyone, if marginally less 
 Date/times are represented by specialized data types, which means ADIF's `QSO_DATE` is combined with
 `TIME_ON`, and similarly `QSO_DATE_OFF` with `TIME_OFF`.
 
+I have not included most of ADIF's enumerations. Programs using this schema should still respect
+those enumerations, but putting those into a codified schema makes it prohibitively difficult to 
+accommodate e.g. new political boundaries and new operating modes.  
+
 ## Should I use it?
 
 This is an unofficial extension of ADIF and does not yet have any community support, which is
