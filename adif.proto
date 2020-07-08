@@ -6,6 +6,7 @@ import "google/protobuf/timestamp.proto";
 // by ADIF v3.1.0 while restructuring them semantically. Developers using this protobuf schema
 // should be aware of the field mappings, validation and deprecation policies from the parent
 // specification.
+package adif;
 
 message Adif {
   Header header = 1;
@@ -24,8 +25,7 @@ message Header {
   // identifies the version of the logger, converter, or utility that created or processed this ADIF
   // file
   string program_version = 4;
-  // specifies the name and optional enumeration or range of user-defined fields
-  repeated string user_defined = 5;
+  // TODO: protobuf extensions for user defined fields?
 }
 
 // Data about one radio contact
