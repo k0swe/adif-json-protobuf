@@ -1,3 +1,4 @@
+import sys
 import adif_pb2
 from google.protobuf.json_format import MessageToJson
 from hamutils.adif import ADIReader
@@ -15,7 +16,7 @@ def safe_int(d, key):
     return 0
 
 
-f = open('test.adi', 'r')
+f = open(sys.argv[1], 'r')
 adi = ADIReader(f)
 
 pb_adi = adif_pb2.Adif()
