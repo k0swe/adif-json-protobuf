@@ -138,8 +138,7 @@ for qso in adi:
             if stx != 0:
                 pb_qso.contest.serial_sent = str(stx)
         pb_qso.contest.arrl_section = safe_bytes(qso, 'arrl_sect')
-        # TODO: rename this field in the proto, it's going to conflict in many languages
-        # pb_qso.contest['class'] = safe_bytes(qso, 'class')
+        pb_qso.contest.station_class = safe_bytes(qso, 'class')
 
 json = MessageToJson(pb_adi)
 print(json)
