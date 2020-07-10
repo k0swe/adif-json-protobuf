@@ -17,7 +17,7 @@
             "type": "string",
             "description": "ARRL section"
         },
-        "class": {
+        "station_class": {
             "type": "string",
             "description": "contest class (e.g. for ARRL Field Day)"
         },

@@ -236,7 +236,7 @@ message ContestData {
   // ARRL section
   string arrl_section = 4;
   // contest class (e.g. for ARRL Field Day)
-  string class = 5;
+  string station_class = 5;
   // contest check (e.g. for ARRL Sweepstakes)
   string check = 6;
   // contest precedence (e.g. for ARRL Sweepstakes)
