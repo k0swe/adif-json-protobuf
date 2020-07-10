@@ -1,3 +1,4 @@
+import re
 import sys
 from pathlib import Path
 
@@ -6,6 +7,7 @@ from google.protobuf.json_format import MessageToJson
 from hamutils.adif import ADIReader
 from tabulate import tabulate
 
+lat_lon_re = re.compile('([NESW])(\d+) ([\d.]+)')
 
 def safe_bytes(d, key):
     if key in d:
@@ -27,8 +29,15 @@ def safe_float(d, key):
 
 def safe_lat_long(d, key):
     if key in d:
-        # TODO: this is only mocked for now
-        return 1.1
+        raw = d[key]
+        m = lat_lon_re.search(raw)
+        cardinal = m.group(1)
+        degs = int(m.group(2))
+        mins = float(m.group(3))
+        retval = degs + (mins / 60)
+        if cardinal == 'S' or cardinal == 'W':
+            retval *= -1
+        return retval
     return 0
 
 
