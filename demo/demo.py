@@ -1,7 +1,10 @@
 import sys
+from pathlib import Path
+
 import adif_pb2
 from google.protobuf.json_format import MessageToJson
 from hamutils.adif import ADIReader
+from tabulate import tabulate
 
 
 def safe_bytes(d, key):
@@ -43,6 +46,7 @@ def safe_upload_status(d, key):
     return 0
 
 
+adif_size = Path(sys.argv[1]).stat().st_size
 f = open(sys.argv[1], 'r')
 adi = ADIReader(f)
 
@@ -128,4 +132,12 @@ for qso in adi:
         # TODO: rename this field in the proto, it's going to conflict in many languages
         # pb_qso.contest['class'] = safe_bytes(qso, 'class')
 
-print(MessageToJson(pb_adi))
+json = MessageToJson(pb_adi)
+print(json)
+print(
+    tabulate(
+        [['Input ADIF', adif_size],
+         ['Pretty JSON', len(json)],
+         ['Binary protobuf', len(pb_adi.SerializeToString())]],
+        headers=['Encoding', 'bytes']),
+    file=sys.stderr)
