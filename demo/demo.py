@@ -134,10 +134,14 @@ for qso in adi:
 
 json = MessageToJson(pb_adi)
 print(json)
+
+num_fmt = "{:,}"
+json_size = len(json)
+pb_size = len(pb_adi.SerializeToString())
 print(
     tabulate(
-        [['Input ADIF', adif_size],
-         ['Pretty JSON', len(json)],
-         ['Binary protobuf', len(pb_adi.SerializeToString())]],
+        [['Input ADIF', num_fmt.format(adif_size)],
+         ['Pretty JSON', num_fmt.format(json_size)],
+         ['Binary protobuf', num_fmt.format(pb_size)]],
         headers=['Encoding', 'bytes']),
     file=sys.stderr)
