@@ -100,7 +100,7 @@ for qso in adi:
     pb_qso.logging_station.op_name = safe_bytes(qso, 'my_name')
     pb_qso.logging_station.state = safe_bytes(qso, 'my_state')
     pb_qso.contacted_station.op_name = safe_bytes(qso, 'name')
-    pb_qso.contacted_station.op_call = safe_bytes(qso, 'operator')
+    pb_qso.logging_station.op_call = safe_bytes(qso, 'operator')
     pb_qso.qrzcom.upload_status = safe_upload_status(qso, 'qrzcom_qso_upload_status')
     pb_qso.card.received_message = safe_bytes(qso, 'qslmsg')
     pb_qso.card.sent_status = safe_bytes(qso, 'qsl_sent')
