@@ -98,7 +98,9 @@ message Qso {
   // Physical QSL card status
   Qsl card = 31;
 
-  // TODO: protobuf extensions for user defined fields?
+  // Application-defined fields. Keys should follow ADIF 3.1.0 IV.A.4, i.e.
+  // APP_{PROGRAMID}_{FIELDNAME}
+  map<string, string> app_defined = 32;
 }
 
 // QSO fields describing one of the stations involved in the contact
