@@ -7,5 +7,13 @@ if ! command -v protoc-gen-jsonschema &> /dev/null; then
   echo "Need to install protoc-gen-jsonschema"
   go get github.com/chrusty/protoc-gen-jsonschema/cmd/protoc-gen-jsonschema
 fi
+if ! command -v protoc-gen-go &> /dev/null; then
+  echo "Need to install protoc-gen-go"
+  go install google.golang.org/protobuf/cmd/protoc-gen-go
+fi
 
-protoc --jsonschema_out=./jsonschema/ --python_out=./demo/ adif.proto
+protoc \
+  --jsonschema_out=./jsonschema/ \
+  --python_out=./demo/ \
+  --go_out=./go/ \
+  adif.proto

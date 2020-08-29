@@ -8,6 +8,8 @@ import "google/protobuf/timestamp.proto";
 // specification.
 package adif;
 
+option go_package = ".;adifpb";
+
 message Adif {
   Header header = 1;
   repeated Qso qsos = 2;
