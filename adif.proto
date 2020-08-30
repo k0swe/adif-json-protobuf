@@ -87,7 +87,7 @@ message Qso {
   // clublog.org upload status
   Upload clublog = 26;
   // HRDLog.net upload status
-  Upload hdrlog = 27;
+  Upload hrdlog = 27;
   // QRZ.com upload status
   Upload qrzcom = 28;
 

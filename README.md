@@ -142,8 +142,8 @@ ADIF QSO field | Protobuf Qso field
 `FREQ_RX` | `freq_rx`
 `GRIDSQUARE` | `contacted_station.grid_square`
 `GUEST_OP` | (obsolete)
-`HRDLOG_QSO_UPLOAD_DATE` | `hdrlog.upload_date`
-`HRDLOG_QSO_UPLOAD_STATUS` | `hdrlog.upload_status`
+`HRDLOG_QSO_UPLOAD_DATE` | `hrdlog.upload_date`
+`HRDLOG_QSO_UPLOAD_STATUS` | `hrdlog.upload_status`
 `IOTA` | `contacted_station.iota`
 `IOTA_ISLAND_ID` | `contacted_station.iota_island_id`
 `ITUZ` | `contacted_station.itu_zone`

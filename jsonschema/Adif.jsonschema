@@ -232,7 +232,7 @@
                         "type": "object",
                         "description": "clublog.org upload status"
                     },
-                    "hdrlog": {
+                    "hrdlog": {
                         "$ref": "adif.Upload",
                         "additionalProperties": true,
                         "type": "object",
