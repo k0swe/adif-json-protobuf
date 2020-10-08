@@ -1,13 +1,15 @@
+import gzip
 import re
-import sys
 from pathlib import Path
 
 import adif_pb2
+import sys
 from google.protobuf.json_format import MessageToJson
 from hamutils.adif import ADIReader
 from tabulate import tabulate
 
 lat_lon_re = re.compile('([NESW])(\d+) ([\d.]+)')
+
 
 def safe_bytes(d, key):
     if key in d:
@@ -55,8 +57,10 @@ def safe_upload_status(d, key):
     return 0
 
 
-adif_size = Path(sys.argv[1]).stat().st_size
-f = open(sys.argv[1], 'r')
+filename = sys.argv[1]
+adif_size = Path(filename).stat().st_size
+gzip_adif_size = len(gzip.compress(open(filename, "rb").read()))
+f = open(filename, 'r')
 adi = ADIReader(f)
 
 pb_adi = adif_pb2.Adif()
@@ -145,11 +149,13 @@ print(json)
 
 num_fmt = "{:,}"
 json_size = len(json)
+gzip_json_size = len(gzip.compress(json.encode('utf-8')))
 pb_size = len(pb_adi.SerializeToString())
+gzip_pb_size = len(gzip.compress(pb_adi.SerializeToString()))
 print(
     tabulate(
-        [['Input ADIF', num_fmt.format(adif_size)],
-         ['Pretty JSON', num_fmt.format(json_size)],
-         ['Binary protobuf', num_fmt.format(pb_size)]],
-        headers=['Encoding', 'bytes']),
+        [['Input ADIF', num_fmt.format(adif_size), num_fmt.format(gzip_adif_size)],
+         ['JSON', num_fmt.format(json_size), num_fmt.format(gzip_json_size)],
+         ['Binary protobuf', num_fmt.format(pb_size), num_fmt.format(gzip_pb_size)]],
+        headers=['Encoding', 'bytes', 'gzip']),
     file=sys.stderr)
