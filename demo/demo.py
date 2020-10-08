@@ -68,7 +68,7 @@ for qso in adi:
     pb_qso = pb_adi.qsos.add()
     pb_qso.band = safe_bytes(qso, 'band')
     pb_qso.band_rx = safe_bytes(qso, 'band_rx')
-    pb_qso.contacted_station.op_call = safe_bytes(qso, 'call')
+    pb_qso.contacted_station.station_call = safe_bytes(qso, 'call')
     pb_qso.contacted_station.county = safe_bytes(qso, 'cnty')
     pb_qso.comment = safe_bytes(qso, 'comment')
     pb_qso.contacted_station.continent = safe_bytes(qso, 'cont')
