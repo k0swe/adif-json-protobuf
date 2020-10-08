@@ -3,6 +3,101 @@
 This repository is an unofficial extension to the [ADIF](https://www.adif.org/) amateur radio data
 interchange specification.
 
+<table>
+<tr><th>ADIF</th><th>JSON</th></tr>
+<tr><td><pre>
+&lt;band:3>20m
+&lt;call:4>KK9A
+&lt;cnty:12>NC, Cabarrus
+&lt;cont:2>NA
+&lt;contest_id:10>CQ-WPX-SSB
+&lt;country:13>United States
+&lt;dxcc:3>291
+&lt;freq:6>14.282
+&lt;gridsquare:6>EM95re
+&lt;lotw_qsl_rcvd:1>Y
+&lt;lotw_qsl_sent:1>Y
+&lt;lotw_qslrdate:8>20200402
+&lt;lotw_qslsdate:8>20200406
+&lt;mode:3>SSB
+&lt;my_city:11>Westminster
+&lt;my_cnty:13>CO, Jefferson
+&lt;my_country:13>United States
+&lt;my_gridsquare:6>DM79lv
+&lt;my_name:20>Christopher C Keller
+&lt;my_state:2>CO
+&lt;name:12>JOHN P BAYNE
+&lt;qrzcom_qso_upload_date:8>20200329
+&lt;qrzcom_qso_upload_status:1>Y
+&lt;qsl_via:6>WD9DZV
+&lt;qso_date:8>20200329
+&lt;qso_date_off:8>20200329
+&lt;qth:7>MIDLAND
+&lt;rst_rcvd:2>59
+&lt;rst_sent:2>59
+&lt;srx:4>1592
+&lt;state:2>NC
+&lt;station_callsign:5>K0SWE
+&lt;stx:1>1
+&lt;time_off:4>0034
+&lt;time_on:4>0034
+&lt;tx_pwr:3>100
+&lt;eor>
+</pre>
+</td>
+<td>
+
+```
+{
+  "loggingStation": {
+    "stationCall": "K0SWE",
+    "opName": "Christopher C Keller",
+    "gridSquare": "DM79lv",
+    "power": 100.0,
+    "city": "Westminster",
+    "county": "CO, Jefferson",
+    "state": "CO",
+    "country": "United States",
+  },
+  "contactedStation": {
+    "stationCall": "KK9A",
+    "opName": "JOHN P BAYNE",
+    "gridSquare": "EM95re",
+    "qslVia": "WD9DZV",
+    "city": "MIDLAND",
+    "county": "NC, Cabarrus",
+    "state": "NC",
+    "country": "United States",
+    "dxcc": 291,
+    "continent": "NA",
+  },
+  "band": "20m",
+  "freq": 14.282,
+  "mode": "SSB",
+  "timeOn": "2020-03-29T00:34:00Z",
+  "timeOff": "2020-03-29T00:34:00Z",
+  "rstReceived": "59",
+  "rstSent": "59",
+  "contest": {
+    "contestId": "CQ-WPX-SSB",
+    "serialSent": "1",
+    "serialReceived": "1592"
+  },
+  "qrzcom": {
+    "uploadDate": "2020-03-29T00:00:00Z",
+    "uploadStatus": "UPLOAD_COMPLETE"
+  },
+  "lotw": {
+    "sentDate": "2020-04-06T00:00:00Z",
+    "sentStatus": "Y",
+    "receivedDate": "2020-04-02T00:00:00Z",
+    "receivedStatus": "Y"
+  },
+},
+```
+</td></tr>
+</table>
+
 ## Background
 
 ADIF is popular among the amateur radio community for transmitting and exchanging information about
