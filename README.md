@@ -11,14 +11,15 @@ backward-compatible ways.
 
 The wire format of the protocol is a bespoke ASCII format based on tags with field width indicators.
 While simple to parse, the unique encoding prevents the use of many modern protocol handling tools,
-which slows development effort on more modern amateur radio contact logging software. An extension 
-called ADX attempted to encode ADIF data in XML, but ADX has not been widely adopted. I speculate 
-this is because ADIF was considered good enough and ADX didn't add value, but another complaint 
-among developers is that ADX failed to follow XML best practices. Notably, 
-[it does not respect XML namespaces][1], breaking extensibility. Without wide adoption from 
-developers, users have had no motivation to entrust their data to ADX. Even if they cared about an 
-arguably superior wire format, the fear of incompatibility would have discouraged end users from
-using it.
+which slows development effort on more modern amateur radio contact logging software. In addition,
+ADIF's reliance on ASCII and inability to be modernized for UTF-8 is an eyesore to anyone with 
+diacritics in their name or location. An extension called ADX attempted to encode ADIF data in XML, 
+but ADX has not been widely adopted. I speculate this is because ADIF was considered good enough and
+ADX didn't add value, but another complaint among developers is that ADX failed to follow XML best 
+practices. Notably, [it does not respect XML namespaces][1], breaking extensibility. Without wide 
+adoption from developers, users have had no motivation to entrust their data to ADX. Even if they 
+cared about an arguably superior wire format, the fear of incompatibility would have discouraged 
+users from using it.
 
 [1]: http://tlfabian.blogspot.com/2016/07/musings-on-adif-file-format.html
 
@@ -27,10 +28,11 @@ using it.
 ADIF has served the amateur radio community well for several decades. It's the *lingua franca* of 
 ham logging software and will continue to be for a long time. Even software written against newer
 interchange formats will need to speak ADIF for the forseeable future. However, the format is
-showing its age and does not mesh well with modern software development practices and toolchains.
-Most programming languages now have mature libraries for handling JSON data transparently without
-having to write any custom parsing logic. XML libraries are similarly widely available, but as
-noted, most people have already abandoned ADX, and XML's heyday has passed.
+showing its age and does not mesh well with international user bases, or modern software
+development practices and toolchains. Most programming languages now have mature libraries for
+handling UTF-8 and JSON data transparently without having to write any custom parsing logic. XML 
+libraries are similarly widely available, but as noted, most people have already abandoned ADX, and 
+XML's heyday has passed.
 
 Beyond just tooling improvements, I assert that semantic improvements can be made to ADIF. Rather
 than representing a QSO as a flat set of 153 key/value pairs (some of which have further internal 
