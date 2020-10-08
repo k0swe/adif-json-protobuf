@@ -5,7 +5,7 @@
 // source: adif.proto
 
 // This protocol buffer definition represents amateur radio contacts. It includes the fields defined
-// by ADIF v3.1.0 while restructuring them semantically. Developers using this protobuf schema
+// by ADIF v3.1.1 while restructuring them semantically. Developers using this protobuf schema
 // should be aware of the field mappings, validation and deprecation policies from the parent
 // specification.
 
@@ -285,7 +285,7 @@ type Qso struct {
 	Lotw *Qsl `protobuf:"bytes,30,opt,name=lotw,proto3" json:"lotw,omitempty"`
 	// Physical QSL card status
 	Card *Qsl `protobuf:"bytes,31,opt,name=card,proto3" json:"card,omitempty"`
-	// Application-defined fields. Keys should follow ADIF 3.1.0 IV.A.4, i.e.
+	// Application-defined fields. Keys should follow ADIF 3.1.1 IV.A.4, i.e.
 	// APP_{PROGRAMID}_{FIELDNAME}
 	AppDefined map[string]string `protobuf:"bytes,32,rep,name=app_defined,json=appDefined,proto3" json:"app_defined,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }

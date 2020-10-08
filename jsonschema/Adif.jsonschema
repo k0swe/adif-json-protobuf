@@ -267,7 +267,7 @@
                             "type": "string"
                         },
                         "type": "object",
-                        "description": "Application-defined fields. Keys should follow ADIF 3.1.0 IV.A.4, i.e.\n APP_{PROGRAMID}_{FIELDNAME}"
+                        "description": "Application-defined fields. Keys should follow ADIF 3.1.1 IV.A.4, i.e.\n APP_{PROGRAMID}_{FIELDNAME}"
                     }
                 },
                 "additionalProperties": true,

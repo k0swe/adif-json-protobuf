@@ -64,7 +64,7 @@ Apache Thrift or Amazon Ion, but I happen to know protobuf.
 
 ## Which ADIF fields are included?
 
-Most of the fields from the ADIF 3.1.0 specification are present in this schema. I did not include
+Most of the fields from the ADIF 3.1.1 specification are present in this schema. I did not include
 the `INTL` fields because both protobuf and JSON explicitly support UTF-8 strings, making the `INTL`
 fields redundant. I did not include deprecated fields. Finally, I omitted `SRX` and `TRX` with the
 assertion that all contest serial numbers be stored as strings. You weren't going to do arithmetic 
