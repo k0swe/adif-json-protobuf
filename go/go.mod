@@ -1,4 +1,4 @@
-module github.com/k0swe/adif-json-protobuf/go/v2
+module github.com/k0swe/adif-json-protobuf/go
 
 go 1.14
 
