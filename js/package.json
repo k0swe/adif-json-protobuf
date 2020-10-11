@@ -1,0 +1,11 @@
+{
+  "name": "adif-pb",
+  "version": "0.0.1",
+  "description": "Protocol buffers for exchanging amateur radio logs",
+  "dependencies": {
+    "@types/google-protobuf": "^3.7.3",
+    "google-protobuf": "^3.13.0"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/k0swe/adif-json-protobuf"
+}
