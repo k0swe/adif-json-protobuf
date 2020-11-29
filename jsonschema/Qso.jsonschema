@@ -3,13 +3,11 @@
     "properties": {
         "logging_station": {
             "$ref": "adif.Station",
-            "additionalProperties": true,
-            "type": "object"
+            "additionalProperties": true
         },
         "contacted_station": {
             "$ref": "adif.Station",
-            "additionalProperties": true,
-            "type": "object"
+            "additionalProperties": true
         },
         "propagation": {
             "properties": {
@@ -202,37 +200,31 @@
         "clublog": {
             "$ref": "adif.Upload",
             "additionalProperties": true,
-            "type": "object",
             "description": "clublog.org upload status"
         },
         "hrdlog": {
             "$ref": "adif.Upload",
             "additionalProperties": true,
-            "type": "object",
             "description": "HRDLog.net upload status"
         },
         "qrzcom": {
             "$ref": "adif.Upload",
             "additionalProperties": true,
-            "type": "object",
             "description": "QRZ.com upload status"
         },
         "eqsl": {
             "$ref": "adif.Qsl",
             "additionalProperties": true,
-            "type": "object",
             "description": "eQSL.cc QSL status"
         },
         "lotw": {
             "$ref": "adif.Qsl",
             "additionalProperties": true,
-            "type": "object",
             "description": "ARRL Logbook of the World QSL status"
         },
         "card": {
             "$ref": "adif.Qsl",
             "additionalProperties": true,
-            "type": "object",
             "description": "Physical QSL card status"
         },
         "app_defined": {
@@ -490,6 +482,16 @@
                     "format": "date-time"
                 },
                 "upload_status": {
+                    "enum": [
+                        "UNKNOWN",
+                        0,
+                        "UPLOAD_COMPLETE",
+                        1,
+                        "DO_NOT_UPLOAD",
+                        2,
+                        "MODIFIED_AFTER_UPLOAD",
+                        3
+                    ],
                     "oneOf": [
                         {
                             "type": "string"

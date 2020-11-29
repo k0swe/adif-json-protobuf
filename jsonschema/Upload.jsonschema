@@ -6,6 +6,16 @@
             "format": "date-time"
         },
         "upload_status": {
+            "enum": [
+                "UNKNOWN",
+                0,
+                "UPLOAD_COMPLETE",
+                1,
+                "DO_NOT_UPLOAD",
+                2,
+                "MODIFIED_AFTER_UPLOAD",
+                3
+            ],
             "oneOf": [
                 {
                     "type": "string"
