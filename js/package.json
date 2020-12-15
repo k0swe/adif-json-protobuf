@@ -1,6 +1,6 @@
 {
   "name": "adif-pb",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Protocol buffers for exchanging amateur radio logs",
   "dependencies": {
     "@types/google-protobuf": "3.7.4",
