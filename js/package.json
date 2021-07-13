@@ -3,7 +3,7 @@
   "version": "0.0.8",
   "description": "Protocol buffers for exchanging amateur radio logs",
   "dependencies": {
-    "@types/google-protobuf": "3.15.2",
+    "@types/google-protobuf": "3.15.3",
     "google-protobuf": "3.17.3"
   },
   "license": "Apache-2.0",
