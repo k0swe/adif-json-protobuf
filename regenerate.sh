@@ -9,7 +9,7 @@ if ! command -v protoc-gen-jsonschema &> /dev/null; then
 fi
 if ! command -v protoc-gen-go &> /dev/null; then
   echo "Need to install protoc-gen-go"
-  go install google.golang.org/protobuf/cmd/protoc-gen-go
+  go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 fi
 if ! command -v protoc-gen-ts &> /dev/null; then
   echo "Need to install protoc-gen-ts"
