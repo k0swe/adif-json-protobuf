@@ -1,15 +1,214 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "properties": {
-        "logging_station": {
-            "$ref": "adif.Station",
-            "additionalProperties": true
+    "$ref": "#/definitions/Qso",
+    "definitions": {
+        "Qso": {
+            "properties": {
+                "logging_station": {
+                    "$ref": "#/definitions/adif.Station",
+                    "additionalProperties": true
+                },
+                "contacted_station": {
+                    "$ref": "#/definitions/adif.Station",
+                    "additionalProperties": true
+                },
+                "propagation": {
+                    "$ref": "#/definitions/adif.Propagation",
+                    "additionalProperties": true
+                },
+                "band": {
+                    "type": "string",
+                    "description": "logging station's transmit band"
+                },
+                "band_rx": {
+                    "type": "string",
+                    "description": "in a split frequency QSO, the logging station's receiving band"
+                },
+                "freq": {
+                    "type": "number",
+                    "description": "logging station's transmit frequency in Megahertz"
+                },
+                "freq_rx": {
+                    "type": "number",
+                    "description": "in a split frequency QSO, the logging station's receiving frequency in Megahertz"
+                },
+                "mode": {
+                    "type": "string",
+                    "description": "QSO Mode"
+                },
+                "submode": {
+                    "type": "string",
+                    "description": "QSO Submode"
+                },
+                "distance_km": {
+                    "type": "integer",
+                    "description": "the distance between the logging station and the contacted station"
+                },
+                "time_on": {
+                    "type": "string",
+                    "description": "date and time the QSO started",
+                    "format": "date-time"
+                },
+                "time_off": {
+                    "type": "string",
+                    "description": "date and time the QSO ended",
+                    "format": "date-time"
+                },
+                "random": {
+                    "type": "boolean",
+                    "description": "indicates whether the QSO was random or scheduled"
+                },
+                "rst_received": {
+                    "type": "string",
+                    "description": "signal report from the contacted station"
+                },
+                "rst_sent": {
+                    "type": "string",
+                    "description": "signal report sent to the contacted station"
+                },
+                "swl": {
+                    "type": "boolean",
+                    "description": "indicates that the QSO information pertains to an SWL report"
+                },
+                "complete": {
+                    "type": "string",
+                    "description": "indicates whether the QSO was complete from the perspective of the logging station"
+                },
+                "comment": {
+                    "type": "string",
+                    "description": "comment field for QSO (recommended use: information of interest to the contacted station's\n operator)"
+                },
+                "notes": {
+                    "type": "string",
+                    "description": "QSO notes (recommended use: information of interest to the logging station's operator)"
+                },
+                "contest": {
+                    "$ref": "#/definitions/adif.ContestData",
+                    "additionalProperties": true
+                },
+                "award_submitted": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "description": "TODO: Award message type\n the list of awards submitted to a sponsor"
+                },
+                "award_granted": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "description": "the list of awards granted by a sponsor"
+                },
+                "credit_submitted": {
+                    "items": {
+                        "$ref": "#/definitions/adif.Credit"
+                    },
+                    "type": "array",
+                    "description": "the list of credits sought for this QSO"
+                },
+                "credit_granted": {
+                    "items": {
+                        "$ref": "#/definitions/adif.Credit"
+                    },
+                    "type": "array",
+                    "description": "the list of credits granted to this QSO"
+                },
+                "public_key": {
+                    "type": "string",
+                    "description": "public encryption key"
+                },
+                "clublog": {
+                    "$ref": "#/definitions/adif.Upload",
+                    "additionalProperties": true,
+                    "description": "clublog.org upload status"
+                },
+                "hrdlog": {
+                    "$ref": "#/definitions/adif.Upload",
+                    "additionalProperties": true,
+                    "description": "HRDLog.net upload status"
+                },
+                "qrzcom": {
+                    "$ref": "#/definitions/adif.Upload",
+                    "additionalProperties": true,
+                    "description": "QRZ.com upload status"
+                },
+                "eqsl": {
+                    "$ref": "#/definitions/adif.Qsl",
+                    "additionalProperties": true,
+                    "description": "eQSL.cc QSL status"
+                },
+                "lotw": {
+                    "$ref": "#/definitions/adif.Qsl",
+                    "additionalProperties": true,
+                    "description": "ARRL Logbook of the World QSL status"
+                },
+                "card": {
+                    "$ref": "#/definitions/adif.Qsl",
+                    "additionalProperties": true,
+                    "description": "Physical QSL card status"
+                },
+                "app_defined": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object",
+                    "description": "Application-defined fields. Keys should follow ADIF 3.1.1 IV.A.4, i.e.\n APP_{PROGRAMID}_{FIELDNAME}"
+                }
+            },
+            "additionalProperties": true,
+            "type": "object",
+            "description": "Data about one radio contact"
         },
-        "contacted_station": {
-            "$ref": "adif.Station",
-            "additionalProperties": true
+        "adif.ContestData": {
+            "properties": {
+                "contest_id": {
+                    "type": "string",
+                    "description": "Contest Identifier"
+                },
+                "serial_sent": {
+                    "type": "string",
+                    "description": "contest QSO transmitted serial number"
+                },
+                "serial_received": {
+                    "type": "string",
+                    "description": "contest QSO received serial number"
+                },
+                "arrl_section": {
+                    "type": "string",
+                    "description": "ARRL section"
+                },
+                "station_class": {
+                    "type": "string",
+                    "description": "contest class (e.g. for ARRL Field Day)"
+                },
+                "check": {
+                    "type": "string",
+                    "description": "contest check (e.g. for ARRL Sweepstakes)"
+                },
+                "precedence": {
+                    "type": "string",
+                    "description": "contest precedence (e.g. for ARRL Sweepstakes)"
+                }
+            },
+            "additionalProperties": true,
+            "type": "object",
+            "description": "QSO fields that are relevant to contests only"
         },
-        "propagation": {
+        "adif.Credit": {
+            "properties": {
+                "credit": {
+                    "type": "string"
+                },
+                "qsl_medium": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": true,
+            "type": "object",
+            "description": "data about using this QSO for award credit"
+        },
+        "adif.Propagation": {
             "properties": {
                 "propagation_mode": {
                     "type": "string",
@@ -61,201 +260,10 @@
                 }
             },
             "additionalProperties": true,
-            "type": "object"
-        },
-        "band": {
-            "type": "string",
-            "description": "logging station's transmit band"
-        },
-        "band_rx": {
-            "type": "string",
-            "description": "in a split frequency QSO, the logging station's receiving band"
-        },
-        "freq": {
-            "type": "number",
-            "description": "logging station's transmit frequency in Megahertz"
-        },
-        "freq_rx": {
-            "type": "number",
-            "description": "in a split frequency QSO, the logging station's receiving frequency in Megahertz"
-        },
-        "mode": {
-            "type": "string",
-            "description": "QSO Mode"
-        },
-        "submode": {
-            "type": "string",
-            "description": "QSO Submode"
-        },
-        "distance_km": {
-            "type": "integer",
-            "description": "the distance between the logging station and the contacted station"
-        },
-        "time_on": {
-            "type": "string",
-            "description": "date and time the QSO started",
-            "format": "date-time"
-        },
-        "time_off": {
-            "type": "string",
-            "description": "date and time the QSO ended",
-            "format": "date-time"
-        },
-        "random": {
-            "type": "boolean",
-            "description": "indicates whether the QSO was random or scheduled"
-        },
-        "rst_received": {
-            "type": "string",
-            "description": "signal report from the contacted station"
-        },
-        "rst_sent": {
-            "type": "string",
-            "description": "signal report sent to the contacted station"
-        },
-        "swl": {
-            "type": "boolean",
-            "description": "indicates that the QSO information pertains to an SWL report"
-        },
-        "complete": {
-            "type": "string",
-            "description": "indicates whether the QSO was complete from the perspective of the logging station"
-        },
-        "comment": {
-            "type": "string",
-            "description": "comment field for QSO (recommended use: information of interest to the contacted station's\n operator)"
-        },
-        "notes": {
-            "type": "string",
-            "description": "QSO notes (recommended use: information of interest to the logging station's operator)"
-        },
-        "contest": {
-            "properties": {
-                "contest_id": {
-                    "type": "string",
-                    "description": "Contest Identifier"
-                },
-                "serial_sent": {
-                    "type": "string",
-                    "description": "contest QSO transmitted serial number"
-                },
-                "serial_received": {
-                    "type": "string",
-                    "description": "contest QSO received serial number"
-                },
-                "arrl_section": {
-                    "type": "string",
-                    "description": "ARRL section"
-                },
-                "station_class": {
-                    "type": "string",
-                    "description": "contest class (e.g. for ARRL Field Day)"
-                },
-                "check": {
-                    "type": "string",
-                    "description": "contest check (e.g. for ARRL Sweepstakes)"
-                },
-                "precedence": {
-                    "type": "string",
-                    "description": "contest precedence (e.g. for ARRL Sweepstakes)"
-                }
-            },
-            "additionalProperties": true,
-            "type": "object"
-        },
-        "award_submitted": {
-            "items": {
-                "type": "string"
-            },
-            "type": "array",
-            "description": "TODO: Award message type\n the list of awards submitted to a sponsor"
-        },
-        "award_granted": {
-            "items": {
-                "type": "string"
-            },
-            "type": "array",
-            "description": "the list of awards granted by a sponsor"
-        },
-        "credit_submitted": {
-            "items": {
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "$ref": "adif.Credit"
-            },
-            "type": "array",
-            "description": "the list of credits sought for this QSO"
-        },
-        "credit_granted": {
-            "items": {
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "$ref": "adif.Credit"
-            },
-            "type": "array",
-            "description": "the list of credits granted to this QSO"
-        },
-        "public_key": {
-            "type": "string",
-            "description": "public encryption key"
-        },
-        "clublog": {
-            "$ref": "adif.Upload",
-            "additionalProperties": true,
-            "description": "clublog.org upload status"
-        },
-        "hrdlog": {
-            "$ref": "adif.Upload",
-            "additionalProperties": true,
-            "description": "HRDLog.net upload status"
-        },
-        "qrzcom": {
-            "$ref": "adif.Upload",
-            "additionalProperties": true,
-            "description": "QRZ.com upload status"
-        },
-        "eqsl": {
-            "$ref": "adif.Qsl",
-            "additionalProperties": true,
-            "description": "eQSL.cc QSL status"
-        },
-        "lotw": {
-            "$ref": "adif.Qsl",
-            "additionalProperties": true,
-            "description": "ARRL Logbook of the World QSL status"
-        },
-        "card": {
-            "$ref": "adif.Qsl",
-            "additionalProperties": true,
-            "description": "Physical QSL card status"
-        },
-        "app_defined": {
-            "additionalProperties": {
-                "type": "string"
-            },
             "type": "object",
-            "description": "Application-defined fields. Keys should follow ADIF 3.1.1 IV.A.4, i.e.\n APP_{PROGRAMID}_{FIELDNAME}"
-        }
-    },
-    "additionalProperties": true,
-    "type": "object",
-    "description": "Data about one radio contact",
-    "definitions": {
-        "adif.Credit": {
-            "$schema": "http://json-schema.org/draft-04/schema#",
-            "properties": {
-                "credit": {
-                    "type": "string"
-                },
-                "qsl_medium": {
-                    "type": "string"
-                }
-            },
-            "additionalProperties": true,
-            "type": "object",
-            "description": "data about using this QSO for award credit",
-            "id": "adif.Credit"
+            "description": "QSO fields describing radio propagation conditions"
         },
         "adif.Qsl": {
-            "$schema": "http://json-schema.org/draft-04/schema#",
             "properties": {
                 "sent_date": {
                     "type": "string",
@@ -290,11 +298,9 @@
             },
             "additionalProperties": true,
             "type": "object",
-            "description": "QSL data about confirmation of this contact",
-            "id": "adif.Qsl"
+            "description": "QSL data about confirmation of this contact"
         },
         "adif.Station": {
-            "$schema": "http://json-schema.org/draft-04/schema#",
             "properties": {
                 "op_call": {
                     "type": "string",
@@ -471,11 +477,9 @@
             },
             "additionalProperties": true,
             "type": "object",
-            "description": "QSO fields describing one of the stations involved in the contact",
-            "id": "adif.Station"
+            "description": "QSO fields describing one of the stations involved in the contact"
         },
         "adif.Upload": {
-            "$schema": "http://json-schema.org/draft-04/schema#",
             "properties": {
                 "upload_date": {
                     "type": "string",
@@ -504,8 +508,7 @@
             },
             "additionalProperties": true,
             "type": "object",
-            "description": "data about uploading this QSO to online logbook sites",
-            "id": "adif.Upload"
+            "description": "data about uploading this QSO to online logbook sites"
         }
     }
 }

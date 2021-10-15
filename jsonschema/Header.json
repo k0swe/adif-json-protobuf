@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$ref": "#/definitions/Header",
+    "definitions": {
+        "Header": {
+            "properties": {
+                "adif_version": {
+                    "type": "string",
+                    "description": "identifies the version of ADIF used in this file in the format X.Y.Z"
+                },
+                "created_timestamp": {
+                    "type": "string",
+                    "description": "identifies the UTC date and time that the file was created",
+                    "format": "date-time"
+                },
+                "program_id": {
+                    "type": "string",
+                    "description": "identifies the name of the logger, converter, or utility that created or processed this ADIF\n file"
+                },
+                "program_version": {
+                    "type": "string",
+                    "description": "identifies the version of the logger, converter, or utility that created or processed this ADIF\n file\n\nTODO: protobuf extensions for user defined fields?"
+                }
+            },
+            "additionalProperties": true,
+            "type": "object",
+            "description": "metadata about the ADIF content"
+        }
+    }
+}
