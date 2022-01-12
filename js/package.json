@@ -4,7 +4,7 @@
   "description": "Protocol buffers for exchanging amateur radio logs",
   "dependencies": {
     "@types/google-protobuf": "3.15.5",
-    "google-protobuf": "3.19.1"
+    "google-protobuf": "3.19.3"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/k0swe/adif-json-protobuf"
