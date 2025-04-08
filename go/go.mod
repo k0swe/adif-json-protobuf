@@ -2,7 +2,7 @@ module github.com/k0swe/adif-json-protobuf/go
 
 go 1.21
 
-toolchain go1.24.1
+toolchain go1.24.2
 
 require (
 	github.com/golang/protobuf v1.5.4
