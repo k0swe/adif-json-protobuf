@@ -23,7 +23,8 @@ jobs:
 
       - uses: arduino/setup-protoc@v3
         with:
-          protoc-version: "3.12.4"
+          version: "3.12.4"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install pinned generators
         run: |
