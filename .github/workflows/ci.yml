@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.27.3"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install pinned protoc
+        run: |
+          curl --fail --location --retry 3 \
+            https://github.com/protocolbuffers/protobuf/releases/download/v3.12.4/protoc-3.12.4-linux-x86_64.zip \
+            -o "$RUNNER_TEMP/protoc.zip"
+          echo "d0d4c7a3c08d3ea9a20f94eaface12f5d46d7b023fe2057e834a4181c9e93ff3  $RUNNER_TEMP/protoc.zip" | sha256sum --check
+          unzip -q "$RUNNER_TEMP/protoc.zip" -d "$RUNNER_TEMP/protoc"
+          echo "$RUNNER_TEMP/protoc/bin" >> "$GITHUB_PATH"
+
+      - name: Install pinned generators
+        run: |
+          go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.27.1
+          go install github.com/chrusty/protoc-gen-jsonschema/cmd/protoc-gen-jsonschema@v0.0.0-20240212064413-73d5723042b8
+          npm install --global ts-protoc-gen@0.15.0
+          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+
+      - name: Verify generated artifacts
+        run: |
+          bash regenerate.sh
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
+
+      - name: Validate Go bindings
+        working-directory: go
+        run: go test ./...
+
+      - name: Validate generated Python and JavaScript
+        run: |
+          python -m py_compile demo/adif_pb2.py
+          node --check js/adif_pb.js
+          python -c 'import json, pathlib; [json.loads(p.read_text()) for p in pathlib.Path("jsonschema").glob("*.json")]'

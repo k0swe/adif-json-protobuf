@@ -35,6 +35,7 @@
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Contest Data",
             "description": "QSO fields that are relevant to contests only"
         }
     }

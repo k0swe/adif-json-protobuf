@@ -26,11 +26,13 @@
                         {
                             "type": "integer"
                         }
-                    ]
+                    ],
+                    "title": "Upload Status"
                 }
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Upload",
             "description": "data about uploading this QSO to online logbook sites"
         }
     }

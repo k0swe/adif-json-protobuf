@@ -13,6 +13,7 @@
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Credit",
             "description": "data about using this QSO for award credit"
         }
     }
