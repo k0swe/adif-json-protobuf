@@ -16,7 +16,8 @@
                 }
             },
             "additionalProperties": true,
-            "type": "object"
+            "type": "object",
+            "title": "Adif"
         },
         "adif.ContestData": {
             "properties": {
@@ -51,6 +52,7 @@
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Contest Data",
             "description": "QSO fields that are relevant to contests only"
         },
         "adif.Credit": {
@@ -64,6 +66,7 @@
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Credit",
             "description": "data about using this QSO for award credit"
         },
         "adif.Header": {
@@ -79,15 +82,16 @@
                 },
                 "program_id": {
                     "type": "string",
-                    "description": "identifies the name of the logger, converter, or utility that created or processed this ADIF\n file"
+                    "description": "identifies the name of the logger, converter, or utility that created or processed this ADIF file"
                 },
                 "program_version": {
                     "type": "string",
-                    "description": "identifies the version of the logger, converter, or utility that created or processed this ADIF\n file\n\nTODO: protobuf extensions for user defined fields?"
+                    "description": "identifies the version of the logger, converter, or utility that created or processed this ADIF file  TODO: protobuf extensions for user defined fields?"
                 }
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Header",
             "description": "metadata about the ADIF content"
         },
         "adif.Propagation": {
@@ -126,7 +130,7 @@
                 },
                 "nr_bursts": {
                     "type": "integer",
-                    "description": "the number of meteor scatter bursts heard by the logging stationthe number of meteor scatter\n bursts heard by the logging station"
+                    "description": "the number of meteor scatter bursts heard by the logging stationthe number of meteor scatter bursts heard by the logging station"
                 },
                 "nr_pings": {
                     "type": "integer",
@@ -143,6 +147,7 @@
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Propagation",
             "description": "QSO fields describing radio propagation conditions"
         },
         "adif.Qsl": {
@@ -158,7 +163,7 @@
                 },
                 "sent_via": {
                     "type": "string",
-                    "description": "if QSL_SENT is set to 'Y', the means by which the QSL was sent by the logging station;\n otherwise, the means by which the logging station intends to convey the QSL"
+                    "description": "if QSL_SENT is set to 'Y', the means by which the QSL was sent by the logging station; otherwise, the means by which the logging station intends to convey the QSL"
                 },
                 "received_date": {
                     "type": "string",
@@ -171,7 +176,7 @@
                 },
                 "received_via": {
                     "type": "string",
-                    "description": "if QSL_RCVD is set to 'Y' or 'V', the means by which the QSL was received by the logging\n station; otherwise, the means by which the logging station requested or intends to request that\n the QSL be conveyed."
+                    "description": "if QSL_RCVD is set to 'Y' or 'V', the means by which the QSL was received by the logging station; otherwise, the means by which the logging station requested or intends to request that the QSL be conveyed."
                 },
                 "received_message": {
                     "type": "string",
@@ -180,6 +185,7 @@
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Qsl",
             "description": "QSL data about confirmation of this contact"
         },
         "adif.Qso": {
@@ -256,7 +262,7 @@
                 },
                 "comment": {
                     "type": "string",
-                    "description": "comment field for QSO (recommended use: information of interest to the contacted station's\n operator)"
+                    "description": "comment field for QSO (recommended use: information of interest to the contacted station's operator)"
                 },
                 "notes": {
                     "type": "string",
@@ -271,7 +277,7 @@
                         "type": "string"
                     },
                     "type": "array",
-                    "description": "TODO: Award message type\n the list of awards submitted to a sponsor"
+                    "description": "TODO: Award message type the list of awards submitted to a sponsor"
                 },
                 "award_granted": {
                     "items": {
@@ -333,11 +339,12 @@
                         "type": "string"
                     },
                     "type": "object",
-                    "description": "Application-defined fields. Keys should follow ADIF 3.1.1 IV.A.4, i.e.\n APP_{PROGRAMID}_{FIELDNAME}"
+                    "description": "Application-defined fields. Keys should follow ADIF 3.1.1 IV.A.4, i.e. APP_{PROGRAMID}_{FIELDNAME}"
                 }
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Qso",
             "description": "Data about one radio contact"
         },
         "adif.Station": {
@@ -504,7 +511,7 @@
                 },
                 "usaca_counties": {
                     "type": "string",
-                    "description": "two US counties in the case where the logging station is located on a border between two\n counties, representing counties that the contacted station may claim for the CQ Magazine USA-CA\n award program"
+                    "description": "two US counties in the case where the logging station is located on a border between two counties, representing counties that the contacted station may claim for the CQ Magazine USA-CA award program"
                 },
                 "uksmg": {
                     "type": "integer",
@@ -512,11 +519,12 @@
                 },
                 "vucc_grids": {
                     "type": "string",
-                    "description": "two or four adjacent Maidenhead grid locators, each four characters long, representing the\n logging station's grid squares that the contacted station may claim for the ARRL VUCC award\n program"
+                    "description": "two or four adjacent Maidenhead grid locators, each four characters long, representing the logging station's grid squares that the contacted station may claim for the ARRL VUCC award program"
                 }
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Station",
             "description": "QSO fields describing one of the stations involved in the contact"
         },
         "adif.Upload": {
@@ -543,11 +551,13 @@
                         {
                             "type": "integer"
                         }
-                    ]
+                    ],
+                    "title": "Upload Status"
                 }
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Upload",
             "description": "data about uploading this QSO to online logbook sites"
         }
     }

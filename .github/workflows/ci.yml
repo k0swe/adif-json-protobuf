@@ -21,10 +21,14 @@ jobs:
         with:
           node-version: "20"
 
-      - uses: arduino/setup-protoc@v3
-        with:
-          version: "3.12.4"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install pinned protoc
+        run: |
+          curl --fail --location --retry 3 \
+            https://github.com/protocolbuffers/protobuf/releases/download/v3.12.4/protoc-3.12.4-linux-x86_64.zip \
+            -o "$RUNNER_TEMP/protoc.zip"
+          echo "d0d4c7a3c08d3ea9a20f94eaface12f5d46d7b023fe2057e834a4181c9e93ff3  $RUNNER_TEMP/protoc.zip" | sha256sum --check
+          unzip -q "$RUNNER_TEMP/protoc.zip" -d "$RUNNER_TEMP/protoc"
+          echo "$RUNNER_TEMP/protoc/bin" >> "$GITHUB_PATH"
 
       - name: Install pinned generators
         run: |

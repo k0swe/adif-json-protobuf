@@ -15,15 +15,16 @@
                 },
                 "program_id": {
                     "type": "string",
-                    "description": "identifies the name of the logger, converter, or utility that created or processed this ADIF\n file"
+                    "description": "identifies the name of the logger, converter, or utility that created or processed this ADIF file"
                 },
                 "program_version": {
                     "type": "string",
-                    "description": "identifies the version of the logger, converter, or utility that created or processed this ADIF\n file\n\nTODO: protobuf extensions for user defined fields?"
+                    "description": "identifies the version of the logger, converter, or utility that created or processed this ADIF file  TODO: protobuf extensions for user defined fields?"
                 }
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Header",
             "description": "metadata about the ADIF content"
         }
     }

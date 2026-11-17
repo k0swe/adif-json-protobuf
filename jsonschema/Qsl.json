@@ -15,7 +15,7 @@
                 },
                 "sent_via": {
                     "type": "string",
-                    "description": "if QSL_SENT is set to 'Y', the means by which the QSL was sent by the logging station;\n otherwise, the means by which the logging station intends to convey the QSL"
+                    "description": "if QSL_SENT is set to 'Y', the means by which the QSL was sent by the logging station; otherwise, the means by which the logging station intends to convey the QSL"
                 },
                 "received_date": {
                     "type": "string",
@@ -28,7 +28,7 @@
                 },
                 "received_via": {
                     "type": "string",
-                    "description": "if QSL_RCVD is set to 'Y' or 'V', the means by which the QSL was received by the logging\n station; otherwise, the means by which the logging station requested or intends to request that\n the QSL be conveyed."
+                    "description": "if QSL_RCVD is set to 'Y' or 'V', the means by which the QSL was received by the logging station; otherwise, the means by which the logging station requested or intends to request that the QSL be conveyed."
                 },
                 "received_message": {
                     "type": "string",
@@ -37,6 +37,7 @@
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Qsl",
             "description": "QSL data about confirmation of this contact"
         }
     }

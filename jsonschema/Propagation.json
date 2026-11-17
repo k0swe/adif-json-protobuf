@@ -38,7 +38,7 @@
                 },
                 "nr_bursts": {
                     "type": "integer",
-                    "description": "the number of meteor scatter bursts heard by the logging stationthe number of meteor scatter\n bursts heard by the logging station"
+                    "description": "the number of meteor scatter bursts heard by the logging stationthe number of meteor scatter bursts heard by the logging station"
                 },
                 "nr_pings": {
                     "type": "integer",
@@ -55,6 +55,7 @@
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Propagation",
             "description": "QSO fields describing radio propagation conditions"
         }
     }

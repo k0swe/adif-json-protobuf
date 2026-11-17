@@ -166,7 +166,7 @@
                 },
                 "usaca_counties": {
                     "type": "string",
-                    "description": "two US counties in the case where the logging station is located on a border between two\n counties, representing counties that the contacted station may claim for the CQ Magazine USA-CA\n award program"
+                    "description": "two US counties in the case where the logging station is located on a border between two counties, representing counties that the contacted station may claim for the CQ Magazine USA-CA award program"
                 },
                 "uksmg": {
                     "type": "integer",
@@ -174,11 +174,12 @@
                 },
                 "vucc_grids": {
                     "type": "string",
-                    "description": "two or four adjacent Maidenhead grid locators, each four characters long, representing the\n logging station's grid squares that the contacted station may claim for the ARRL VUCC award\n program"
+                    "description": "two or four adjacent Maidenhead grid locators, each four characters long, representing the logging station's grid squares that the contacted station may claim for the ARRL VUCC award program"
                 }
             },
             "additionalProperties": true,
             "type": "object",
+            "title": "Station",
             "description": "QSO fields describing one of the stations involved in the contact"
         }
     }
